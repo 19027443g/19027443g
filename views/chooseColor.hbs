@@ -1,0 +1,66 @@
+{{> header}}
+
+<script>
+  function updateColor (color,btn_id) {
+	// Real action here
+	document.getElementById("photo").src="./images/{{cloth}}/"+color+".png";
+
+	var collection = document.getElementsByName("color");
+		for(var i = 0; i < collection.length; ++i) {
+   			collection[i].style.background = "white";
+		}
+	document.getElementById(btn_id).style.background = "grey";
+	document.getElementById('color').value = color;
+	document.getElementById('submit').disabled = false;
+  }
+</script>
+
+  		<!--<div class="row">
+			<div class="col-md-12">
+				<h4>Color of your {{cloth}}</h4>
+			</div>
+		</div>
+		-->
+		<form action="/suggestions" method="POST">
+			<div class="row">
+				<div class="col-sm-10 col-md-6">
+					<div class="row">
+						<div class="col-12">
+							<h4>Preview image</h4>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-11 preview-img center">
+							<input id="cloth" name="cloth" type="hidden" value="{{cloth}}" />
+							<input id="color" name="color" type="hidden" value="" />
+							<img class="cloth-img" id="photo" src="./images/{{cloth}}/black.png" />
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-12 col-md-6">
+					<div class="row">
+						<div class="col-12">
+							<h4>Color of your {{cloth}}</h4>
+						</div>
+					</div>
+					<div class="row">
+						{{#each colorList }}
+							<div class="col-4 col-sm-6 padding-10">
+								<button id="button-{{color}}" name="color" type="button" value="{{color}}" onclick="updateColor(this.value,this.id)">{{color}}</button>
+							</div>
+						{{/each}}
+					</div>
+				</div>
+				
+			</div>
+			<div class="row button-set">
+				<div class="col-6 center">
+						<button id="back" type="button" onclick="window.history.back()">Back</button>
+					</div>
+				<div class="col-6 center">
+					<button id="submit" type="submit" disabled="disabled">Confirm</button>
+				</div>
+			</div>
+		</form>
+
+	{{> footer}}

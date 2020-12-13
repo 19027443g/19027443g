@@ -1,0 +1,49 @@
+
+{{> header}}
+<!--<h3>You selected  {{color}} {{cloth}}!</h3>
+
+<h3>You should wear  {{result.color1}} {{result.cloth1}}!</h3>
+<h3>You should wear  {{result.color2}} {{result.cloth2}}!</h3>-->
+<div class="full-width text-center">
+	<div class="container">
+		<div class="row">
+			<div class="col-6">
+				<h5> Suggestion 1</h5>
+				<div class="suggestion suggestion-img">
+					<div class="col-12">
+						<img class="suggestion-top" id="top" src="./images/{{result.cloth1}}/{{result.color1}}.png" />
+					</div>
+					<div class="col-12">
+						<img class="suggestion-bot" id="bot" src="./images/{{result.cloth2}}/{{result.color2}}.png" />
+					</div>
+					<div class="col-12">
+						<img class="suggestion-shoe" id="shoe" src="./images/shoes/{{result.shoe}}.png" />
+					</div>
+				</div>
+			</div>
+			<div class="col-6">
+				<h5> Suggestion 2</h5>
+				<div class="suggestion suggestion-img">
+					<div class="col-12">
+						<img class="suggestion-top" id="top" src="./images/{{result2.cloth1}}/{{result2.color1}}.png" />
+					</div>
+					<div class="col-12">
+						<img class="suggestion-bot" id="bot" src="./images/{{result2.cloth2}}/{{result2.color2}}.png" />
+					</div>
+					<div class="col-12">
+						<img class="suggestion-shoe" id="shoe" src="./images/shoes/{{result2.shoe}}.png" />
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-12 padding-top-20">
+				<button onclick="location.href='/';">Home</button>
+			</div>
+		</div>
+	</div>
+</div>
+	
+
+
+{{> footer}}

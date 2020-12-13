@@ -1,0 +1,57 @@
+
+{{> header}}
+
+<div class="full-width text-center">
+	<form action="/chooseColor" method="POST" class="form-signin full-width text-center">
+		<div class="row">
+			<div class="col-12">
+				<h3>Select your Cloth</h3>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-12">
+				<h5 class="left">TOP</h5>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-12">
+				{{#each clothList }}
+					{{#equals type "top"}}
+					<div class="img-container">
+						<button class="img-container-btn" name="cloth" type="submit" value="{{name}}"><img src="/images/{{name}}/{{color}}.png"/></button>
+						<div class="overlay">
+							<div class="overlay-text">{{name}}</div>
+						</div>
+					</div>
+					{{/equals}} 
+				{{/each}}
+			</div>
+		</div>
+		<div class="row padding-top-20">
+			<div class="col-12">
+				<h5 class="left">BOTTOM</h5>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-12">
+				{{#each clothList }}
+					{{#equals type "trousers and shorts"}}
+					<div class="img-container">
+						<button class="" name="cloth" type="submit" value="{{name}}"><img src="/images/{{name}}/{{color}}.png"/></button>
+						<div class="overlay">
+							<div class="overlay-text">{{name}}</div>
+						</div>
+					</div>
+					{{/equals}} 
+				{{/each}}
+			</div>
+		</div>
+	</form>
+</div>
+<div class="row padding-top-20">
+	<div class="col-12 center">
+		<button id="back" type="button" onclick="window.history.back()">Back</button>
+	</div>
+</div>
+
+{{> footer}}
