@@ -19,7 +19,7 @@ var mail = nodemailer.createTransport({
 
 router.get('/', function(req, res, next) {
 	res.render('index', { 
-		title: 'Homepage',
+		title: "Homepage - Kenny's Idea",
 	});
 });
 
@@ -33,7 +33,7 @@ router.get('/chooseCloth', function(req, res, next) {
             	callback(err);
         	} else {
             	res.render('chooseCloth', { 
-					title: 'Homepage',
+					title: "Choose your Cloth - Kenny's Idea",
 					clothList: content 
 				});
 				//client.close();
@@ -52,7 +52,7 @@ router.post("/chooseColor", function(req, res, next) {
             	callback(err);
         	} else {
             	res.render('chooseColor', { 
-                   		title: 'Cloth',
+                   		title: "Choose your Color - Kenny's Idea",
 						colorList: content,
 						cloth
 				});
@@ -92,7 +92,7 @@ router.post("/suggestions", function(req, res, next) {
         	} else {
         		console.log(content[0]);
             	res.render("suggestions", {
-					title: "Suggestions",
+					title: "Our Suggestions - Kenny's Idea",
 					color,
 					cloth,
 					result : content[0],
@@ -107,7 +107,7 @@ router.post("/suggestions", function(req, res, next) {
 
 router.get('/contact', function(req, res, next) {
 	res.render('contact', { 
-		title: 'Contact',
+		title: "Contact Us - Kenny's Idea",
 	});
 });
 
@@ -127,7 +127,7 @@ router.post('/success', function(req, res, next) {
         console.log(error);
       } else {
         	res.render('success', { 
-			title: 'Success',
+			title: "Thank you - Kenny's Idea",
 			content: 'Success'
 		});
       }
